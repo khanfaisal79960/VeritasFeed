@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h1 class="display-1 text-primary animate-fade-in">{{ error_code }}</h1>
+    <p class="lead text-white animate-fade-in" style="animation-delay: 0.3s;">{{ error_message }}</p>
+    <p class="text-light-gray animate-fade-in" style="animation-delay: 0.6s;">
+        We're sorry, but something went wrong.
+        {% if error_code == 404 %}
+        The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+        {% else %}
+        Please try again later or contact support if the issue persists.
+        {% endif %}
+    </p>
+    <a href="/" class="btn btn-primary btn-lg mt-4 animate-button" style="animation-delay: 0.9s;">Go to Homepage</a>
+</div>
+{% endblock %}
