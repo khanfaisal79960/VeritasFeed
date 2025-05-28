@@ -4,7 +4,7 @@
 
 VeritasFeed is a live news web application that delivers real-time headlines and articles from around the world. Built with Flask and styled using a sleek dark-themed UI, it allows users to browse news by category, search for specific topics, and stay informed with the latest updates—all in a responsive and user-friendly interface.
 
-🔗 [View Live Project](https://veritas-feed.vercel.app/)
+👉 [View Live Project](https://veritas-feed.vercel.app/)
 
 ---
 
