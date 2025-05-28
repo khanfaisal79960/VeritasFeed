@@ -1,6 +1,8 @@
 # VeritasFeed
 
-**Tagline:** *Your Daily Pulse of the World.*
+** *Your Daily Pulse of the World.*
+
+VeritasFeed is a live news web application that delivers real-time headlines and articles from around the world. Built with Flask and styled using a sleek dark-themed UI, it allows users to browse news by category, search for specific topics, and stay informed with the latest updates—all in a responsive and user-friendly interface.
 
 [![Live Demo](https://img.shields.io/badge/View%20Live%20Project-%F0%9F%9A%80-blue?style=for-the-badge)](https://khanfaisal.netlify.app/veritasfeed)
 
