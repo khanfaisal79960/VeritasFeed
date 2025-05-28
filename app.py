@@ -1,17 +1,13 @@
-# app.py
-
 import os
 import requests
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
-# Retrieve API key directly from environment variables
-# It's crucial that NEWS_API_KEY is set in your system's environment
+
 NEWS_API_KEY = "fc82a31c74744f3eb65f5b8bb08cc231"
 NEWS_API_BASE_URL = "https://newsapi.org/v2/"
 
-# --- Helper Functions ---
 
 def fetch_news(endpoint, params=None):
     """
@@ -24,23 +20,22 @@ def fetch_news(endpoint, params=None):
     """
     if not NEWS_API_KEY:
         print("Error: NEWS_API_KEY environment variable is not set.")
-        # You might want to render an error page or display a message to the user
         return {"articles": []}
 
     url = f"{NEWS_API_BASE_URL}{endpoint}"
     headers = {"X-Api-Key": NEWS_API_KEY}
     
-    # Default parameters
+
     default_params = {
         "language": "en",
-        "pageSize": 20 # Fetch 20 articles by default
+        "pageSize": 20 
     }
     if params:
         default_params.update(params)
 
     try:
         response = requests.get(url, headers=headers, params=default_params)
-        response.raise_for_status()  # Raise an exception for HTTP errors (4xx or 5xx)
+        response.raise_for_status()  
         data = response.json()
         return data
     except requests.exceptions.RequestException as e:
@@ -58,7 +53,6 @@ def get_placeholder_image(category=None):
     else:
         return "/static/images/placeholder_news.jpg"
 
-# --- Routes ---
 
 @app.route("/")
 def index():
@@ -68,7 +62,6 @@ def index():
     top_headlines = fetch_news("top-headlines", {"country": "us"})
     articles = top_headlines.get("articles", [])
     
-    # Add placeholder images if original image is missing
     for article in articles:
         if not article.get("urlToImage"):
             article["urlToImage"] = get_placeholder_image()
@@ -83,7 +76,6 @@ def category(category_name):
     category_headlines = fetch_news("top-headlines", {"category": category_name, "country": "us"})
     articles = category_headlines.get("articles", [])
 
-    # Add placeholder images if original image is missing
     for article in articles:
         if not article.get("urlToImage"):
             article["urlToImage"] = get_placeholder_image(category_name)
@@ -101,14 +93,12 @@ def search():
         search_results = fetch_news("everything", {"q": query, "sortBy": "relevancy"})
         articles = search_results.get("articles", [])
         
-        # Add placeholder images if original image is missing
         for article in articles:
             if not article.get("urlToImage"):
                 article["urlToImage"] = get_placeholder_image()
 
     return render_template("search.html", articles=articles, query=query, title=f"Search Results for '{query}'")
 
-# --- Error Handling ---
 @app.errorhandler(404)
 def page_not_found(e):
     """Handles 404 Not Found errors."""
@@ -120,4 +110,4 @@ def internal_server_error(e):
     return render_template("error.html", error_code=500, error_message="Internal Server Error"), 500
 
 if __name__ == "__main__":
-    app.run(debug=True) # Set debug=False in production
+    app.run(debug=True)
