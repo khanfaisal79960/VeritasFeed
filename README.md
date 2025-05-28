@@ -1,6 +1,6 @@
 # VeritasFeed
 
-** *Your Daily Pulse of the World.*
+*Your Daily Pulse of the World.*
 
 VeritasFeed is a live news web application that delivers real-time headlines and articles from around the world. Built with Flask and styled using a sleek dark-themed UI, it allows users to browse news by category, search for specific topics, and stay informed with the latest updates—all in a responsive and user-friendly interface.
 
