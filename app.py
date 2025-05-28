@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # Retrieve API key directly from environment variables
 # It's crucial that NEWS_API_KEY is set in your system's environment
-NEWS_API_KEY = os.environ.get("NEWS_API_KEY")
+NEWS_API_KEY = "fc82a31c74744f3eb65f5b8bb08cc231"
 NEWS_API_BASE_URL = "https://newsapi.org/v2/"
 
 # --- Helper Functions ---
