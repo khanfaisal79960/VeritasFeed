@@ -1,84 +1,75 @@
-# VeritasFeed
+# 📰 VeritasFeed — Your Daily Pulse of the World
 
-*Your Daily Pulse of the World.*
+![Cover](./assets/cover_image.png)
 
-VeritasFeed is a live news web application that delivers real-time headlines and articles from around the world. Built with Flask and styled using a sleek dark-themed UI, it allows users to browse news by category, search for specific topics, and stay informed with the latest updates—all in a responsive and user-friendly interface.
+**VeritasFeed** is a dynamic and real-time news web application built with **Flask** and styled using a modern dark-themed interface. With category browsing, keyword search, and real-time headlines from around the world, it provides a seamless way to stay informed — all in a responsive, animated, and visually engaging layout.
 
-👉 [View Live Project](https://veritas-feed.vercel.app/)
+---
+
+## 🌐 Live Demo
+
+👉 [**View Live Project**](https://veritas-feed.vercel.app/)
+
+---
+
+## 🔥 Features
+
+- 🗞️ **Live News Updates**: Real-time headlines and articles using NewsAPI.
+- 🧭 **Category Browsing**: Browse news by Business, Health, Science, Tech, Sports, etc.
+- 🔍 **Keyword Search**: Search any topic instantly with full-text lookup.
+- 🌙 **Dark Theme UI**: Elegant design using Bootstrap 5 and custom CSS.
+- 📱 **Responsive Design**: Optimized for desktop, tablet, and mobile.
+- ⚡ **Fixed Footer**: Persistent footer with developer contact links.
+- ❌ **Custom 404 Page**: Clean fallback interface for invalid routes.
 
 ---
 
 ## 📸 Project Screenshots
 
-<img src="./assets/screenshot_1.png" alt="VeritasFeed Screenshot 1" width="800"/>
-<img src="./assets/screenshot_2.png" alt="VeritasFeed Screenshot 2" width="800"/>
+| Homepage | Search |
+|----------|----------------|
+| ![Screenshot 1](./assets/screenshot_1.png) | ![Screenshot 2](./assets/screenshot_2.png) |
 
 ---
 
-## 📰 Overview
+## 🧠 How it Works
 
-**VeritasFeed** is a dynamic and live news web application built with **Flask**, designed to provide users with the latest headlines and articles from around the globe. It features a modern, dark theme, category-based browsing, and robust search functionality.
-
----
-
-## ✨ Features
-
-- **Live News Updates:** Real-time news headlines and articles fetched using NewsAPI.
-- **Category Browsing:** View news across categories like Business, Entertainment, Health, Science, Sports, and Technology.
-- **Search Functionality:** Find specific articles easily with keyword-based search.
-- **Modern UI:** Clean dark-themed interface built with Bootstrap 5 and custom CSS.
-- **Responsive Design:** Fully responsive for desktops, tablets, and mobile devices.
-- **Fixed Footer:** Always-visible footer with developer and copyright info.
+- News content is fetched from the [NewsAPI](https://newsapi.org).
+- Categories are handled via routes and query strings.
+- All content is dynamically injected using Flask and rendered with Jinja templates.
+- Custom error handling for failed requests and 404 routes.
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
-**Backend:**
-- Python 3.13.2
-- Flask (Web Framework)
-- Requests (HTTP Library)
-
-**Frontend:**
-- HTML5
-- CSS3 (Custom styling + animations)
-- JavaScript
-- Bootstrap 5
-- Font Awesome (Icons)
-
-**API:**
-- [NewsAPI.org](https://newsapi.org)
+- **Backend**: Flask (Python 3.13.2), Requests
+- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap 5
+- **API**: [NewsAPI.org](https://newsapi.org)
+- **Assets**: Font Awesome, Custom Dark Theme
 
 ---
 
-## 🔑 API Setup: NewsAPI.org
+## 🔑 API Setup
 
-VeritasFeed uses [NewsAPI.org](https://newsapi.org) to retrieve data. To use it:
+1. Sign up at [NewsAPI.org](https://newsapi.org).
+2. Get your API key from your dashboard.
+3. Export the key as an environment variable:
 
-1. Visit [https://newsapi.org](https://newsapi.org) and sign up.
-2. Get your free API key from your dashboard.
-
-### Set as Environment Variable
-
-**Windows (Temporary):**
-
+**Linux/macOS:**
 ```bash
-set NEWS_API_KEY=YOUR_NEWS_API_KEY_HERE
+export NEWS_API_KEY="your_api_key"
+```
+
+**Windows (CMD):**
+```cmd
+set NEWS_API_KEY=your_api_key
 ```
 
 **PowerShell:**
-
 ```powershell
-$env:NEWS_API_KEY="YOUR_NEWS_API_KEY_HERE"
+$env:NEWS_API_KEY="your_api_key"
 ```
-
-**macOS/Linux (Temporary):**
-
-```bash
-export NEWS_API_KEY="YOUR_NEWS_API_KEY_HERE"
-```
-
-For permanent setup, add the export line to your `~/.bashrc`, `~/.zshrc`, or `~/.bash_profile`.
 
 ---
 
@@ -88,84 +79,53 @@ For permanent setup, add the export line to your `~/.bashrc`, `~/.zshrc`, or `~/
 veritasfeed/
 ├── app.py
 ├── requirements.txt
+├── vercel.json
 ├── templates/
 │   ├── base.html
 │   ├── index.html
 │   ├── category.html
 │   ├── search.html
 │   └── error.html
-└── static/
-    ├── css/
-    │   └── style.css
-    ├── js/
-    │   └── script.js
-    └── images/
-        ├── placeholder_news.jpg
-        ├── placeholder_tech.jpg
-        └── placeholder_sports.jpg
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── images/
+│       ├── placeholder_news.jpg
+│       ├── placeholder_tech.jpg
+│       └── placeholder_sports.jpg
+└── assets/
+    ├── cover_image.png
+    ├── screenshot_1.png
+    └── screenshot_2.png
 ```
 
 ---
 
-## 🚀 Setup and Run Instructions
+## 🚀 Getting Started
 
-### 1. Clone the Repository
 ```bash
-git clone <repository-url>
-cd veritasfeed
-```
-
-### 2. Create `requirements.txt`
-```text
-Flask==3.0.3
-requests==2.31.0
-```
-
-### 3. Create a Virtual Environment
-```bash
+git clone https://github.com/VertiasFeed.git
+cd VeritasFeed
 python3 -m venv venv
-```
-
-### 4. Activate the Environment
-
-**Windows:**
-```bash
-.env\Scriptsctivate
-```
-
-**macOS/Linux:**
-```bash
-source venv/bin/activate
-```
-
-### 5. Install Dependencies
-```bash
+source venv/bin/activate  # or .\venv\Scripts\activate on Windows
 pip install -r requirements.txt
-```
-
-### 6. Add Placeholder Images
-
-Place these files inside `static/images/`:
-
-- `placeholder_news.jpg`
-- `placeholder_tech.jpg`
-- `placeholder_sports.jpg`
-
-### 7. Run the Flask App
-```bash
 flask run
 ```
 
-Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
+Then open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
 ---
 
-## 👤 Developer
+## 🙋‍♂️ Developer
 
 **Khan Faisal**
 
-- 🔗 [Portfolio](https://khanfaisal.netlify.app)
-- 🐙 [GitHub](https://github.com/khanfaisal79960)
-- 💼 [LinkedIn](https://www.linkedin.com/in/khanfaisal79960)
+- 🌐 [Portfolio](https://khanfaisal.netlify.app)
+- 💻 [GitHub](https://github.com/khanfaisal79960)
+- 🔗 [LinkedIn](https://www.linkedin.com/in/khanfaisal79960)
 - ✍️ [Medium](https://medium.com/@khanfaisal79960)
-- 📸 [Instagram](https://instagram.com/mr._perfect_1004)
+- 📷 [Instagram](https://instagram.com/mr._perfect_1004)
+
+---
