@@ -106,7 +106,7 @@ veritasfeed/
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/VertiasFeed.git
+git clone https://github.com/khanfaisal79960/VertiasFeed.git
 cd VeritasFeed
 python3 -m venv venv
 source venv/bin/activate  # or .\venv\Scripts\activate on Windows
