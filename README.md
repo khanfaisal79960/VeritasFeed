@@ -123,9 +123,9 @@ Then open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 **Khan Faisal**
 
 - 🌐 [Portfolio](https://khanfaisal.netlify.app)
-- 💻 [GitHub](https://github.com/khanfaisal79960)
-- 🔗 [LinkedIn](https://www.linkedin.com/in/khanfaisal79960)
+- 💼 [LinkedIn](https://www.linkedin.com/in/khanfaisal04)
 - ✍️ [Medium](https://medium.com/@khanfaisal79960)
-- 📷 [Instagram](https://instagram.com/mr._perfect_1004)
+- 📸 [Instagram](https://instagram.com/glitchghost21)
+- 💻 [GitHub](https://github.com/khanfaisal79960)
 
 ---
